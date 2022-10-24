@@ -23,7 +23,7 @@ jobs:
 
     # запуск одной shell-команды
     - name: Run a one-line script
-      run: echo Hello, world
+      run: echo Hello, world!
 
     # запуск двух shell-команд
     - name: Run a multi-line script
