@@ -5,9 +5,9 @@ name: CI
 on:
   # на push и pull_request, только для ветки master
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 # одно или несколько заданий, которые могут быть запущены параллельно или последовательно
 jobs:
