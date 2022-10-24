@@ -1,0 +1,32 @@
+# имя, которое будет показано в интерфейсе github.com
+name: CI
+
+# список событий, при которых будут запускаться задания
+on:
+  # на push и pull_request, только для ветки master
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+# одно или несколько заданий, которые могут быть запущены параллельно или последовательно
+jobs:
+  # у этого workflow всего одна задача - "build"
+  build:
+    # задание будет выполняться на последней версии Ubuntu
+    runs-on: ubuntu-latest
+
+    # шаги задания запускаются последовательно
+    steps:
+      # при выполнении задания будет доступен наш репозиторий
+      - uses: actions/checkout@v2
+
+      # запуск одной shell-команды
+      - name: Run a one-line script
+        run: echo Hello, world
+
+      # запуск двух shell-команд
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build
+          echo test, and deploy your project.
